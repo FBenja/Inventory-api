@@ -1,13 +1,10 @@
 const express = require('express');
 const app = express();
 const dbconnect = require('./config/db');
+const artRoutes = require('./routers/articulos');
 
 app.use(express.json());
-
-app.get('/', (req, res) => {  //creand enpoint
-    res.send('Servidor funcionando!'); 
-
-});
+app.use(artRoutes);
 
 dbconnect().then(() => {
     app.listen('3000', () => {
