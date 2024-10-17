@@ -2,7 +2,7 @@ const express = require ('express');
 const router = express.Router();
 const ModelArt = require('../models/articuloModel');
 
-//traer libros
+//traer listado de libros
 router.get("/articulos", async (req, res) =>{
     try {
         const articulos = await ModelArt.find();
@@ -53,7 +53,7 @@ router.put("/articulos/:id", async (req, res) =>{
     }
 })
 
-// Eliminar libro
+// Eliminar articulo
 
 router.delete("/articulos/:id", async (req, res) =>{
     try {
