@@ -4,7 +4,7 @@ mongoose.set('strictQuery', false);
 const dbconnect = async () => {
     try {
         await mongoose.connect("mongodb://localhost:27017/dbStockArticulos");
-        console.log ('La coneccion a MongoDB fue exitosa');
+        console.log ('La conexion a MongoDB fue exitosa');
     } catch (error) {
         console.error ('La conexion no es correcta', error);
         process.exit(1);

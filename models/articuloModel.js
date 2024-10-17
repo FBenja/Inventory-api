@@ -4,23 +4,11 @@ const mongoose = require ('mongoose');
 
 const artSchema = new mongoose.Schema(
     {
-        nombre: {
-            type : String,
-            require : true,
-        },
-        marca: {
-            type : String,
-            require : true,
-        },
-        descripcion: {
-            type : String,
-            require : true,
-        },
-     
-        precio: {
-            type : String,   // ver type numero !!
-            require : true,
-        }
+        nombre: { type : String, require : true },
+        marca: {type : String, require : true },
+        descripcion: { type : String, require : true },
+        cantidad: { type: Number, require: true },
+        precio: { type : Number,  require : true }
     },
     {
         timestamp: true, //agrega fecha modif 
