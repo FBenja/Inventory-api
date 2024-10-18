@@ -2,9 +2,11 @@ const express = require('express');
 const app = express();
 const dbconnect = require('./config/db');
 const artRoutes = require('./routers/articulos');
+const negRoutes = require('./routers/negocio');
 
 app.use(express.json());
 app.use(artRoutes);
+app.use(negRoutes);
 
 dbconnect().then(() => {
     app.listen('3000', () => {
