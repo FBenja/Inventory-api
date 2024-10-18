@@ -2,7 +2,7 @@ const express = require ('express');
 const router = express.Router();
 const ModelArt = require('../models/articuloModel');
 
-//traer listado de libros
+//traer listado de articulos
 router.get("/articulos", async (req, res) =>{
     try {
         const articulos = await ModelArt.find();
@@ -12,7 +12,7 @@ router.get("/articulos", async (req, res) =>{
     }
 })
 
-//traer un libro
+//traer un articulo
 
 router.get("/articulos/:id", async (req, res) =>{
     try {
