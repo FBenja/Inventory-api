@@ -27,7 +27,7 @@ router.get('/articulos/negocio/busqueda', async (req, res) => {
     }
 })
 
-//Getear un atributo del articulo mediante el id y query
+//Getear un atributo del articulo mediante el id y query (?atributo=marca,precio,cantidad,etc)
 router.get('/articulos/stock/:id', async (req, res) => {
     const id = req.params.id;
     const atributo = req.query.atributo; 
@@ -50,22 +50,5 @@ router.get('/articulos/stock/:id', async (req, res) => {
     }
 });
 
-// Actualizar cantidad de un artículo mediante el id
-router.put('/articulos/stock/:id', async (req, res) => {
-    const id = req.params.id;
-    const { cantidad } = req.body;
 
-    try {
-        
-        const articulo = await ModelArt.updateOne({ _id: id }, { $set: { cantidad: cantidad } });
-
-        if (articulo) {
-            res.json({ mensaje: 'cantidad actualizada con éxito' });
-        } else {
-            res.status(404).send('Articulo no encontrado');
-        }
-    } catch (error) {
-        res.status(500).send({ mensaje: "Error al actualizar la cantidad", error: error.message });
-    }
-});
 module.exports = router;
