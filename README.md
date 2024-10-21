@@ -8,3 +8,6 @@ control detallado de inventarios.
 link trello : https://trello.com/b/qROCMhZo/inventario-crud-api
 
 Metodo de trabajo: SCRUM
+Integrantes: 
+Gustavo Fernandez
+Benjamin Fernandez
